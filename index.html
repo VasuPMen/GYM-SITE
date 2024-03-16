@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<style>
+  .navbar-nav .nav-link:hover {
+    color: rgb(174, 10, 10) !important;
+  }
+
+  .navbar-nav .nav-link {
+    color: white !important;
+  }
+
+  .navbar-nav .nav-item.active .nav-link {
+    color: white !important;
+  }
+
+  .carousel {
+    margin: auto;
+    width: 50%;
+
+  }
+
+  .carousel-item img {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Maintain aspect ratio */
+  }
+
+  .carousel-inner {
+    height: 600px;
+    /* Set the height as per your requirement */
+  }
+
+  .carousel {
+    margin-top: 20px;
+  }
+
+  .carousel {
+    margin: auto;
+    width: 100%;
+  }
+
+  .carousel-inner {
+    height: 800px;
+  }
+
+  .navbar {
+    transition: top 0.3s;
+  }
+
+  .info {
+    background-image: url("pp1.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cards {
+    margin-top: 100px;
+    height: 200px;
+    width: 80vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card {
+    height: 230px;
+    width: 160px;
+    margin: 10px;
+  }
+
+  .card img {
+    width: 100px;
+    margin: 22px;
+  }
+
+  /* .card p{
+    margin: 20px;
+  } */
+  .p1 {
+    margin: 29px;
+    padding: 11px
+  }
+
+  .p2 {
+    margin: 29px;
+    padding: 11px
+  }
+
+  .p3 {
+    margin: 29px;
+    padding: 11px
+  }
+
+  .p4 {
+    margin: -17px;
+    padding: 36px;
+  }
+
+  .p5 {
+    margin: 15px;
+  }
+
+  .p6 {
+    margin: -17px;
+    padding: 36px;
+  }
+
+  .p9,
+  .p11 {
+    font-family: Montserrat;
+    color: #333;
+    font-size: 2.617924em;
+    letter-spacing: -1px;
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+  }
+
+  .b1 {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .animation {}
+
+  .second {
+    display: block;
+    margin-top: 10px;
+  }
+
+  .p1_1,
+  .p1_2 {
+    display: inline-block;
+    text-align: center;
+  }
+
+  .p1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .p1_1 img,
+  .p1_2 img {
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+    margin-bottom: 5px;
+  }
+
+  .c1 {
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 500px;
+  }
+
+  .navbar {
+    background-color: black;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+
+  body {
+    padding-top: 70px;
+  }
+
+  .box1,
+  .box2 {
+    margin-bottom: 20px;
+  }
+
+  .b1 {
+
+    text-align: center;
+  }
+
+  .Programmes {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+    gap: 20px;
+    overflow: hidden;
+  }
+
+  .program-card {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .program-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .program-details {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    transform: translateY(100%);
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .program-card:hover .program-details {
+    transform: translateY(0);
+  }
+
+  .program-details h1 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+
+  .program-details p {
+    font-size: 16px;
+    color: #555;
+  }
+  
+</style>
+
+<body>
+    <nav class="navbar navbar-expand-lg color=#000">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="p2.jpeg" alt="Bootstrap" width="70" height="60">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="/personal.html">Personal Training</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="/member.html" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">Membership</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/half-membership.html">Half-Time-Membership</a></li>
+                <li><a class="dropdown-item" href="/full-membership.html">Full-Time-Membership</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Any Query About Membership</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/nutrition.html">Nutrition</a>
+            </li>
+         
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+
+
+  <!--carousel-->
+  <div class="coursole">
+    <div id="carouselExampleCaptions" class="carousel slide">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="p.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>First slide label</h5>
+            <p>Some representative placeholder content for the first slide.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="i1.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Second slide label</h5>
+            <p>Some representative placeholder content for the second slide.</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="info">
+    <h1>WHY YOU WE ARE BEST</h1>
+    <div class="cards">
+      <div class="card">
+        <img src="p3.png" alt="">
+        <p class="p1">156 Gyms</p>
+      </div>
+      <div class="card">
+        <img src="p4.png" alt="">
+        <p class="p2">95 Cities</p>
+      </div>
+      <div class="card">
+        <img src="p5.png" alt="">
+        <p class="p3">26 States</p>
+      </div>
+      <div class="card">
+        <img src="p6.png" alt="">
+        <p class="p4">Personal Training Programmes</p>
+      </div>
+      <div class="card">
+        <img src="p7.png" alt="">
+        <p class="p5">Corporate Wellness Program</p>
+      </div>
+      <div class="card">
+        <img src="p8.png" alt="">
+        <p class="p6">Group Exercise Program</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="second">
+    <div class="c1">
+      <div class="e1">
+        <p> EXPERIENCED & INTERNATIONALLY CERTIFIED PERSONAL TRAINERS</p>
+      </div>
+      <div class="e2">
+        <h2>The Best Fitness Experience</h2>
+      </div>
+      <div class="e1">
+        <p>Were committed to bringing you the best workout experience</p>
+      </div>
+    </div>
+    <div class="p">
+      <div class="p1">
+        <div class="p1_1">
+          <img src="p15.png" alt="">
+          <p class="p1">Body Composition Assessment</p>
+        </div>
+        <div class="p1_2">
+          <img src="p16.png" alt="">
+          <p class="p1">Open 7 Days A Week</p>
+        </div>
+        <div class="p1_2">
+          <img src="p17.png" alt="">
+          <p class="p1">Complimentary Valet Parking</p>
+        </div>
+        <div class="p1_2">
+          <img src="p18.png" alt="">
+          <p class="p1">Clean, Comfortable and Safe</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="Programmes">
+      <div class="program-card">
+        <img src="p20.jpg" alt="Corporate Membership">
+        <div class="program-details">
+          <h1>Corporate Membership</h1>
+          <p class="pro2">Don't have time to go to the gym? We get the gym to you. Gold's Gym India offers corporate
+            membership programs tailored for companies looking to promote employee wellness and fitness. These programs
+            are designed to encourage a healthier workforce by providing BMI screening, diet and nutrition counselling,
+            fitness activities and seminars for building a healthier lifestyle.</p>
+        </div>
+      </div>
+      <div class="program-card">
+        <img src="p21.jpg" alt="Personal Training">
+        <div class="program-details">
+          <h1>Personal Training</h1>
+          <p class="pro3">Gold's Gym India is known for the competent personal trainers and extraordinary personal
+            training offered by them. The individuals seeking for serious goal-oriented fitness, personalized guidance,
+            motivation, and specialized workout plans, Gold’s Gym India personal training program is for them.</p>
+        </div>
+      </div>
+      <div class="program-card">
+        <img src="p22.jpg" alt="Group Program">
+        <div class="program-details">
+          <h1>Group Program</h1>
+          <p class="pro4">Gold's Gym India provides a variety of group fitness programs such as dance fitness, yoga,
+            HIIT, and much more tailored to cater to diverse fitness preferences and goals. These group programs offer a
+            supportive environment and a sense of community while engaging participants in fun and effective workouts.
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"></script>
+</body>
+
+</html>
